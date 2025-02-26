@@ -10,7 +10,7 @@ npm run server
 
 npm run clean
 
-npm run generate
+npm run build
 
 npm run deploy
 

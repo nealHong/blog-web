@@ -7,7 +7,7 @@ tags: electron
 
 #### 第一步：获取到当前设备的打印机列表
 
-```sh
+```javascript
  //在主线程下，通过ipcMain对象监听渲染线程传过来的getPrinterList事件
  ipcMain.on("getPrinterList", (event) => {
     //主线程获取打印机列表
@@ -18,7 +18,7 @@ tags: electron
 ```
 
 #### 第二步：主线程内监听loadPrinterView（自定义名称）
-```sh
+```javascript
 ipcMain.on("loadPrinterView", (event, obj) => {
     //定义BrowserView
     const view = new BrowserView({
@@ -60,7 +60,7 @@ ipcMain.on("loadPrinterView", (event, obj) => {
 ```
 
 #### 第三步：封装一个公共的打印方法，使用是引入调用即可
-```sh
+```javascript
 import { ipcRenderer } from "electron";
 /**
  * @param {打印机需要的参数} obj 
@@ -95,7 +95,7 @@ export function printFn(obj, fn) {
 ```
 
 #### 第四步：定义一个打印页面print.html
-```sh
+```html
 <!DOCTYPE html>
 <html>
   <head>
